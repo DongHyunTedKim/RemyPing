@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* 흑백 색상만 사용 */
+	--black: #000000;
+	--gray-900: #1a1a1a;
+	--gray-800: #333333;
+	--gray-700: #4d4d4d;
+	--gray-600: #666666;
+	--gray-500: #808080;
+	--gray-400: #999999;
+	--gray-300: #b3b3b3;
+	--gray-200: #cccccc;
+	--gray-100: #e6e6e6;
+	--gray-50: #f7f7f7;
+	--white: #ffffff;
+}
+
+/* 기본 스타일 */
+body {
+	font-family:
+		'Inter',
+		-apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--white);
+	color: var(--black);
+	line-height: 1.5;
+}
+
+/* 레이아웃 컨테이너 */
+.container-app {
+	width: 100%;
+	min-width: 500px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+	background-color: var(--black);
+	color: var(--white);
+	border-radius: 8px;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+	background-color: var(--gray-800);
+}
+
+.btn-secondary {
+	background-color: var(--gray-800);
+	color: var(--white);
+	border-radius: 8px;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+	background-color: var(--gray-700);
+}
+
+/* 카드 스타일 */
+.card {
+	background-color: var(--white);
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 입력 필드 스타일 */
+.input-field {
+	border: 1px solid var(--gray-300);
+	border-radius: 8px;
+	padding: 0.75rem;
+	width: 100%;
+	transition: all 0.2s ease;
+}
+
+.input-field:focus {
+	border-color: var(--gray-800);
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+	outline: none;
+}
+
+/* 드롭다운 스타일 */
+.select-dropdown {
+	appearance: none;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="%23333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+	background-position: right 1rem center;
+	background-repeat: no-repeat;
+	padding-right: 2.5rem;
+}
+
+/* 서식 표시 스타일 */
+.badge-success {
+	background-color: var(--gray-100);
+	color: var(--gray-900);
+	border-radius: 6px;
+	padding: 0.25rem 0.75rem;
+	font-weight: 500;
+	font-size: 0.875rem;
+}
+
+.badge-warning {
+	background-color: var(--gray-100);
+	color: var(--gray-900);
+	border-radius: 6px;
+	padding: 0.25rem 0.75rem;
+	font-weight: 500;
+	font-size: 0.875rem;
+}
+
+.badge-error {
+	background-color: var(--gray-100);
+	color: var(--gray-900);
+	border-radius: 6px;
+	padding: 0.25rem 0.75rem;
+	font-weight: 500;
+	font-size: 0.875rem;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+	animation: slideUp 0.3s ease-out;
+}
+
+/* 토글 스위치 */
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 51px;
+	height: 31px;
+}
+
+.toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.toggle-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--gray-300);
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.toggle-slider:before {
+	position: absolute;
+	content: '';
+	height: 27px;
+	width: 27px;
+	left: 2px;
+	bottom: 2px;
+	background-color: white;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+	background-color: var(--black);
+}
+
+input:checked + .toggle-slider:before {
+	transform: translateX(20px);
+}
